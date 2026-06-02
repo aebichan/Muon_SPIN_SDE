@@ -30,11 +30,11 @@ print("Axis order:")
 print("G_table[i_D_mu, i_D_Li, i_nu_mu, i_nu_Li, i_alpha, i_B_L, i_t]")
 
 # Choose one example curve.
-i_D_mu = 3
-i_D_Li = 3
+i_D_mu = 8
+i_D_Li = 0
 i_nu_mu = 0
-i_nu_Li = 5
-i_alpha = 3
+i_nu_Li = 0
+i_alpha = 0
 i_B_L = 0
 
 Gz = G[i_D_mu, i_D_Li, i_nu_mu, i_nu_Li, i_alpha, i_B_L, :]
