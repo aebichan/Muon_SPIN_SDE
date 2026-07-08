@@ -115,7 +115,7 @@ G_table[
 ```
 or, in manuscript notation,
 
-[
+$$
 G_z =
 G_z(
 \Delta_\mu,
@@ -126,7 +126,7 @@ G_z(
 B_L;
 t
 ).
-]
+$$
 
 ## Quick start (v1.0: Static muon case)
 
@@ -146,26 +146,27 @@ example_curve.png
 
 The parameter names inside the `.npz` file are the names used during numerical table generation. Some of them differ from the notation used in the manuscript. The correspondence is:
 
-| NPZ key      | Manuscript symbol | Meaning                                    | Units             |
-| ------------ | ----------------- | ------------------------------------------ | ----------------- |
-| `D_mu_vals`  | (\Delta_\mu)      | quenched/background Gaussian field width   | (\mu{\rm s}^{-1}) |
-| `D_Li_vals`  | (\Delta_{\rm Li}) | Li-driven dynamical field width            | (\mu{\rm s}^{-1}) |
-| `nu_mu_vals` | (\nu_\mu)         | muon hopping/background decorrelation rate | (\mu{\rm s}^{-1}) |
-| `nu_Li_vals` | (\nu_{\rm Li})    | Li-driven fluctuation rate                 | (\mu{\rm s}^{-1}) |
-| `alpha_vals` | (\Lambda)         | retarded backaction/memory strength        | (\mu{\rm s}^{-2}) |
-| `B_L_vals`   | (B_L)             | applied longitudinal field                 | G                 |
-| `t_array`    | (t)               | time grid                                  | (\mu{\rm s})      |
-| `G_table`    | (G_z(t))          | longitudinal muon-spin polarization        | dimensionless     |
+| NPZ key      | Manuscript symbol   | Meaning                                    | Units               |
+| ------------ | --------------------| ------------------------------------------ | ------------------- |
+| `D_mu_vals`  | $$\Delta_\mu$$      | quenched/background Gaussian field width   | $$\mu{\rm s}^{-1}$$ |
+| `D_Li_vals`  | $$\Delta_{\rm Li}$$ | Li-driven dynamical field width            | $$\mu{\rm s}^{-1}$$ |
+| `nu_mu_vals` | $$\nu_\mu$$         | muon hopping/background decorrelation rate | $$\mu{\rm s}^{-1}$$ |
+| `nu_Li_vals` | $$\nu_{\rm Li}$$    | Li-driven fluctuation rate                 | $$\mu{\rm s}^{-1}$$ |
+| `alpha_vals` | $$\Lambda$$         | retarded backaction/memory strength        | $$\mu{\rm s}^{-2}$$ |
+| `B_L_vals`   | $$B_L$$             | applied longitudinal field                 | G (Gauss)           |
+| `t_array`    | $$t$$               | time grid                                  | $$\mu{\rm s}$$      |
+| `G_table`    | $$G_z(t)$$          | longitudinal muon-spin polarization        | dimensionless       |
 
-Important: the internal name `alpha_vals` corresponds to the manuscript parameter (\Lambda). The name `alpha` is retained only because it was used in the original numerical table-generation code.
+Important: the internal name `alpha_vals` corresponds to the manuscript parameter $$\Lambda$$. The name `alpha` is retained only because 
+it was used in the original numerical table-generation code.
 
 ## Static-muon convention
 
 The lookup table assumes
 
-[
+$$
 \nu_\mu = 0.
-]
+$$
 
 Therefore, `nu_mu_vals` contains only one value:
 
@@ -201,7 +202,7 @@ G_table[
 
 or, in manuscript notation,
 
-[
+$$
 G_z =
 G_z(
 \Delta_\mu,
@@ -212,9 +213,9 @@ G_z(
 B_L;
 t
 ).
-]
+$$
 
-Since (\nu_\mu=0), the third index has length one.
+Since $$\nu_\mu=0$$, the third index has length one.
 
 ## Parameter ranges
 
@@ -255,15 +256,13 @@ i_B_L = 0
 Gz = G[i_D_mu, i_D_Li, i_nu_mu, i_nu_Li, i_alpha, i_B_L, :]
 ```
 
-This example selects a zero-field curve dominated by the quenched/background width (\Delta_\mu), giving a KT-like polarization profile.
+This example selects a zero-field curve dominated by the quenched/background width $$\Delta_\mu$$, giving a KT-like polarization profile.
 
 ## Notes
 
-* The table values are dimensionless polarization functions (G_z(t)).
+* The table values are dimensionless polarization functions $$G_z(t)$$.
 * The time axis is in microseconds.
-* Field widths and fluctuation rates are in (\mu{\rm s}^{-1}).
-* The memory/backaction parameter stored as `alpha_vals` corresponds to (\Lambda) in the manuscript and has units (\mu{\rm s}^{-2}).
-* The table was generated using (N_{\rm traj}=90{,}000) stochastic trajectories.
+* Field widths and fluctuation rates are in $$\mu{\rm s}^{-1}$$.
+* The memory/backaction parameter stored as `alpha_vals` corresponds to $$\Lambda$$ in the manuscript and has units $$\mu{\rm s}^{-2}$$.
+* The table was generated using $$N_{\rm traj}=90{,}000$$ stochastic trajectories.
 
-For details of the theory, see the arXiv manuscript:
-[Open Quantum System Theory of Muon Spin Relaxation in Materials](https://arxiv.org/abs/2603.23137).
