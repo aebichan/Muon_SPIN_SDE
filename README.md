@@ -63,9 +63,8 @@ sha256sum -c SHA256SUMS.txt
 
 Release page:
 
-```text
 https://github.com/aebichan/Muon_SPIN_SDE/releases/tag/v2.0
-```
+
 This table includes a finite grid of muon hopping/decorrelation rates $$\nu_\mu$$. 
 
 Full reconstructed file:
